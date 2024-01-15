@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { products } from '../mockdata';
 import ItemList from './itemlist';
+import { fetchProducts } from '../api';
 
 const Catalog = () => {
   const { categoryName } = useParams();
