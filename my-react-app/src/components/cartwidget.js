@@ -1,14 +1,11 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { FaShoppingCart } from 'react-icons/fa';
 
-const CartWidget = () => {
-  const itemCount = 5; // Puedes cambiar este valor con la cantidad real de elementos en el carrito
-
+const CartWidget = ({ itemCount }) => {
   return (
-    <div className="cart-widget">
-      <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
-      <span className="badge">{itemCount}</span>
+    <div>
+      <FaShoppingCart size={24} />
+      <span>{itemCount}</span>
     </div>
   );
 };

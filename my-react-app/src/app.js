@@ -1,18 +1,23 @@
 import React from 'react';
-import NavBar from './components/navbar';
-import ItemListContainer from './components/itemlistcontainer';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import NavBar from './components/navbar'
+import CartWidget from './components/cartwidget';
+import Catalog from './components/catalog';
+import ProductDetail from './components/productdetail';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      <NavBar />
-      <main className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">Bienvenido a la Tienda</h1>
-        <ItemListContainer greeting="¡Gracias por visitarnos!" />
-      
-      </main>
-    </div>
+    <Router>
+      <div>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Catalog />} />
+          <Route path="/category/:categoryName" element={<Catalog />} />
+          <Route path="/item/:itemId" element={<ProductDetail />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
